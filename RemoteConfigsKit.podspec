@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.platform         = :ios, '10.0'
   s.static_framework = true
 
-  s.source_files = 'RemoteConfigsKit/Sources/**/*'
+  s.source_files = 'RemoteConfigsKit/**/*'
   s.exclude_files = 'RemoteConfigsKit/Resources/*.plist'
 
   # Internal Dependencies

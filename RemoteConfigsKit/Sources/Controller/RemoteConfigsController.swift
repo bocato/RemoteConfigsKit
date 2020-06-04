@@ -118,7 +118,7 @@ final class RemoteConfigsController: RemoteConfigsControlling {
         let key = config.name
         guard
             let providerWithValue = providers.first(where: { $0.identifier == config.provider }),
-            let stringValue = providerWithValue.getStringValue(ofType: type, onKey: key)
+            let stringValue = providerWithValue.getStringValue(ofType: type, forKey: key)
         else { return nil }
         return stringValue
     }

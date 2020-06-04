@@ -13,7 +13,7 @@ struct RemoteConfigValue {
 extension DynamicValueDataType {
     func parse(_ value: String) -> String {
         switch self {
-        case .bool:
+        case .boolean:
             return formatBoolString(value)
         default:
             return value

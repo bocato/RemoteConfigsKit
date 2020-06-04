@@ -28,8 +28,8 @@ final class SecretWorker: SecretWorkerProtocol {
         let type = configRegister.dataType
         let providers = remoteConfigsController.providers
         guard
-            let providerWithValue = providers.first(where: { $0.getStringValue(ofType: type, onKey: key) != nil }),
-            let stringValue = providerWithValue.getStringValue(ofType: type, onKey: key)
+            let providerWithValue = providers.first(where: { $0.getStringValue(ofType: type, forKey: key) != nil }),
+            let stringValue = providerWithValue.getStringValue(ofType: type, forKey: key)
         else { return nil }
         return stringValue
     }

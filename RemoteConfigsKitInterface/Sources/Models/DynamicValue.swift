@@ -2,8 +2,8 @@ import Foundation
 
 // MARK: - Value Definition
 
-public enum DynamicValueDataType {
-    case bool
+public enum DynamicValueDataType: Equatable {
+    case boolean
     case string
     case number
     case decodable
@@ -28,17 +28,15 @@ extension DynamicValue {
         let isInt = T.self == Int.self
         let isDouble = T.self == Double.self
         let isFloat = T.self == Float.self
-        let isNSNumber = T.self == NSNumber.self
-        return isDouble || isFloat || isInt || isNSNumber
+        return isDouble || isFloat || isInt
     }
 
     public static func extractType() -> DynamicValueDataType {
-        let dataType = type(of: Data.self)
-        if dataType is Bool {
-            return .bool
-        } else if isNumeric(dataType) {
+        if Data.self == Bool.self {
+            return .boolean
+        } else if isNumeric(Data.self) {
             return .number
-        } else if dataType is String {
+        } else if Data.self == String.self {
             return .string
         } else {
             return .decodable

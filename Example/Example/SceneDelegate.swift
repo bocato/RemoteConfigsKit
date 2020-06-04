@@ -1,15 +1,15 @@
+import Firebase
 import RemoteConfigsKit
 import RemoteConfigsKitInterface
-import Firebase
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    
+
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         setupRemoteConfigs(for: scene)
     }
-    
+
     private func setupRemoteConfigs(for scene: UIScene) {
         //        FirebaseApp.configure()
         //
@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //            debugPrint(String(describing: error))
         //        }
     }
-    
+
     private func setupInitialController(for scene: UIScene) {
         guard let windowScene = scene as? UIWindowScene else { return }
         let secretViewController = RemoteConfigsManager.buildSecretViewController()

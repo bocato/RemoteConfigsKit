@@ -11,7 +11,7 @@ public protocol RemoteConfigsDataProvider {
     /// Gets a dynamic value from a said provider
     func get<T: DynamicValue>(_: T.Type) -> T.Data?
     /// Gets the string value of a DynamicValue
-    func getStringValue(ofType type: DynamicValueDataType, onKey key: String) -> String?
+    func getStringValue(ofType type: DynamicValueDataType, forKey key: String) -> String?
 }
 
 extension RemoteConfigsDataProvider {
