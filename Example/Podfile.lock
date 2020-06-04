@@ -145,7 +145,7 @@ SPEC CHECKSUMS:
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
   RemoteConfigsKit: 073078b6dc09f630ebbdb55600fc6f0e5c467803
-  RemoteConfigsKitInterface: c9fed56c1a89f993854511e4b5e17fcc94d9b5c8
+  RemoteConfigsKitInterface: 03da34847fad28fea5e68594ec71e7ee880b3b2e
 
 PODFILE CHECKSUM: 7c3896677e6a67221996b88f19852faeaed7d37b
 

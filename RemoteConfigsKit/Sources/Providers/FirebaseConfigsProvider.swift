@@ -135,10 +135,15 @@ public final class FirebaseConfigsProvider: RemoteConfigsDataProvider {
                 debugPrint("[REMOTE CONFIG] FirebaseRemoteConfig fetch() succeeded.")
                 self?.lastSuccessfullFetchTimestamp = Date()
                 dispatchGroup.enter()
-                self?.firebaseRemoteConfig.activate {
+                self?.firebaseRemoteConfig.activate { activated, activationError in
                     if let activationError = activationError {
                         let logMessage = "FirebaseRemoteConfig Activate returned an error.\nError:\n \(String(describing: error))"
                         debugPrint(logMessage)
+                        return
+                    }
+                    guard activated == true, activationError == nil else {
+                        debugPrint("FirebaseRemoteConfig was not activated.")
+                        return
                     }
                     dispatchGroup.leave()
                 }

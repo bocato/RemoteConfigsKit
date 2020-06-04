@@ -7,7 +7,7 @@ struct RemoteConfigValue {
     let dataType: DynamicValueDataType
     let origin: Origin
     let description: String
-    let provider: String
+    let provider: RemoteConfigsDataProviderIdentifier
 }
 
 extension DynamicValueDataType {
