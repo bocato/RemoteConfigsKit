@@ -1,0 +1,20 @@
+platform :ios, '10.0'
+
+source 'https://github.com/cocoaPods/specs'
+
+inhibit_all_warnings!
+use_modular_headers!
+
+target 'Example' do
+  
+  project 'Example.xcodeproj'
+  
+  # Development Pod
+  pod 'RemoteConfigsKit', path: '../', :testspecs => ['Tests']
+  pod 'RemoteConfigsKitInterface', path: '../', :testspecs => ['Tests']
+  
+  # Third Party Dependencies
+  pod 'Firebase'
+  pod 'Firebase/RemoteConfig'
+  
+end
